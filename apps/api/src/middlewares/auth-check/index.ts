@@ -17,7 +17,7 @@ export function isAuthenticated(req: Request, res: Response, next: NextFunction)
     throw new ApiError("Invalid or expired token", 401);
   }
 
-  req.userId = payload.userId;
+  req.auth.userId = payload.userId;
 
   next();
 }
