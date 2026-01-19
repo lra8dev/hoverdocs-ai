@@ -1,8 +1,11 @@
-import { config } from "@hoverdocs/utils";
 import pino from "pino";
 
+import { config } from "@/config/env-variable";
+
+const isDevelopment = config.NODE_ENV === "development";
+
 export const logger = pino({
-  transport: config.NODE_ENV === "development"
+  transport: isDevelopment
     ? {
         target: "pino-pretty",
         options: {
