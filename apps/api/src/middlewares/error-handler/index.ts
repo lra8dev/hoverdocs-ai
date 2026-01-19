@@ -1,10 +1,10 @@
 import type { NextFunction, Request, Response } from "express";
 
-import { config } from "@hoverdocs/utils";
 import { ZodError } from "@hoverdocs/validators";
 
 import type { AppError } from "@/types";
 
+import { config } from "@/config/env-variable";
 import { ApiError } from "@/lib/api-error";
 import { logger } from "@/lib/logger";
 
@@ -79,9 +79,6 @@ export function errorHandler(error: AppError, req: Request, res: Response, next:
     timestamp: new Date().toLocaleString(),
     requestId: req.headers["x-request-id"] || "unknown",
     ...(details && { details }),
-    ...(isDevelopment
-      && error instanceof ApiError
-      && error.isOperational && { stack: error.stack }),
   };
 
   if (error instanceof ApiError && !error.isOperational) {
