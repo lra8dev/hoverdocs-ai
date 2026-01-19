@@ -2,11 +2,11 @@ import type { NextFunction, Request, Response } from "express";
 
 import { Ratelimit } from "@upstash/ratelimit";
 
-import { redis } from "@/config";
+import { getRedisClient } from "@/config/redis";
 import { ApiError } from "@/lib/api-error";
 
 const limiter = new Ratelimit({
-  redis,
+  redis: getRedisClient(),
   limiter: Ratelimit.slidingWindow(10, "1 d"),
   analytics: true,
   prefix: "@upstash/ratelimit",
