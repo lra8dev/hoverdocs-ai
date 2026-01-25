@@ -11,6 +11,7 @@ import { getLineText } from "../../utils/document-linetext";
 export class HoverDocsProvider implements HoverProvider {
   private apiService: ApiService;
   private static readonly DEBOUNCE_MS = 600;
+  public isEnabled: boolean = true;
 
   constructor(apiService: ApiService) {
     this.apiService = apiService;
@@ -21,6 +22,10 @@ export class HoverDocsProvider implements HoverProvider {
     position: Position,
     token: CancellationToken,
   ): Promise<Hover | null> {
+    if (!this.isEnabled) {
+      return null;
+    }
+
     const range = document.getWordRangeAtPosition(position);
     const lineText = getLineText(document, position.line);
 
