@@ -1,0 +1,17 @@
+{
+  "name": "@hoverdocs/utils",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "check:types": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@hoverdocs/eslint-config": "workspace:*",
+    "@types/node": "catalog:types",
+    "eslint": "catalog:tooling"
+  }
+}
