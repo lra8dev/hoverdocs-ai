@@ -1,0 +1,101 @@
+{
+  "publisher": "lucky",
+  "name": "hoverdocs-ai",
+  "displayName": "HoverDocs AI",
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.27.0",
+  "description": "Context-Aware AI Documentation for VS Code",
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#09090b",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/lra8dev/hoverdocs-ai/blob/main/apps/extension/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lra8dev/hoverdocs-ai.git",
+    "directory": "apps/extension"
+  },
+  "bugs": {
+    "url": "https://github.com/lra8dev/hoverdocs-ai/issues"
+  },
+  "keywords": [
+    "ai",
+    "gemini",
+    "documentation",
+    "hover",
+    "explanation",
+    "developer-tools",
+    "vscode-extension",
+    "typescript",
+    "context-aware",
+    "productivity",
+    "summary",
+    "copilot",
+    "assistant"
+  ],
+  "categories": [
+    "AI",
+    "Programming Languages",
+    "Education",
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "icon": "assets/icon.png",
+  "pricing": "Free",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "hoverdocs.signin",
+        "title": "HoverDocs: Sign In"
+      },
+      {
+        "command": "hoverdocs.signout",
+        "title": "HoverDocs: Sign Out"
+      },
+      {
+        "command": "hoverdocs.toggle",
+        "title": "HoverDocs: Toggle On/Off"
+      }
+    ],
+    "configuration": {
+      "title": "HoverDocs AI",
+      "properties": {
+        "hoverdocs.debounceTime": {
+          "type": "number",
+          "default": 600,
+          "description": "Delay in milliseconds before triggering AI summary.",
+          "minimum": 0,
+          "maximum": 2000
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run package",
+    "compile": "pnpm run check:types && pnpm run lint && node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "typecheck:watch": "tsc -watch -p ./",
+    "package": "pnpm run check:types && pnpm run lint && node esbuild.js --production",
+    "check:types": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@hoverdocs/validators": "workspace:*"
+  },
+  "devDependencies": {
+    "@hoverdocs/eslint-config": "workspace:*",
+    "@types/node": "catalog:types",
+    "@types/vscode": "catalog:types",
+    "esbuild": "catalog:tooling",
+    "eslint": "catalog:tooling",
+    "typescript": "catalog:core"
+  }
+}
