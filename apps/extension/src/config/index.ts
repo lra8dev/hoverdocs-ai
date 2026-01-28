@@ -1,5 +1,5 @@
 export const config = {
-  X_PUBLISHER: "lucky",
+  X_PUBLISHER: "luckyra8od",
   X_IDENTIFIER: "hoverdocs-ai",
   // Development
   // SERVER_API_URL: "http://localhost:5000",

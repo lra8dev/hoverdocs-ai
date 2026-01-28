@@ -1,5 +1,5 @@
 {
-  "publisher": "lucky",
+  "publisher": "luckyra8od",
   "name": "hoverdocs-ai",
   "displayName": "HoverDocs AI",
   "version": "1.0.0",
@@ -44,7 +44,7 @@
   "icon": "assets/icon.png",
   "pricing": "Free",
   "engines": {
-    "vscode": "^1.93.0"
+    "vscode": "^1.108.1"
   },
   "activationEvents": [
     "onStartupFinished"
@@ -93,7 +93,7 @@
   "devDependencies": {
     "@hoverdocs/eslint-config": "workspace:*",
     "@types/node": "catalog:types",
-    "@types/vscode": "catalog:types",
+    "@types/vscode": "^1.108.1",
     "esbuild": "catalog:tooling",
     "eslint": "catalog:tooling",
     "typescript": "catalog:core"
