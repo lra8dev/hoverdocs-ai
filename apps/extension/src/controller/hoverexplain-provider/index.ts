@@ -1,5 +1,5 @@
 import type { SummaryResponse } from "@hoverexplain/validators";
-import type { CancellationToken,HoverProvider,  Position, TextDocument } from "vscode";
+import type { CancellationToken, HoverProvider, Position, TextDocument } from "vscode";
 
 import { Hover, MarkdownString } from "vscode";
 

@@ -3,11 +3,11 @@ import type { ExtensionContext, StatusBarItem } from "vscode";
 import { commands, languages, StatusBarAlignment, window } from "vscode";
 
 import { selector } from "./constants";
-import { HoverExplainProvider } from "./controller/hoverexplain-provider"; 
+import { HoverExplainProvider } from "./controller/hoverexplain-provider";
+import { HoverExplainUriHandler } from "./controller/uri-controller";
 import { ApiService } from "./services/api-service";
 import { AuthManager } from "./services/auth-manager";
 import { updateStatusBar } from "./utils/status-bar";
-import { HoverExplainUriHandler } from "./controller/uri-controller";
 
 let statusBarItem: StatusBarItem;
 
