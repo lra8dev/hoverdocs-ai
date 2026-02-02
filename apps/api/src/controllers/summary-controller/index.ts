@@ -1,7 +1,7 @@
 import type { SummaryRequest, SummaryResponse } from "@hoverexplain/validators";
 
-import { generateCodeHash } from "@hoverexplain/utils";
 import { summaryRequestSchema } from "@hoverexplain/validators";
+import { createHash } from "node:crypto";
 
 import type { ExpRequest, ExpResponse } from "@/types";
 
@@ -9,7 +9,7 @@ import { getRateLimiter } from "@/config/rate-limiter";
 import { getRedisClient } from "@/config/redis";
 import { ApiError } from "@/lib/api-error";
 import { logger } from "@/lib/logger";
-import { onGetCodeSummary } from "@/services/gemini-api";
+import { onGetCodeSummary } from "@/services/ai-model";
 
 export class SummaryController {
   private static readonly CACHE_TTL_SECONDS = 60 * 60 * 24 * 7; // 7 days
@@ -27,7 +27,7 @@ export class SummaryController {
 
     try {
       const redis = getRedisClient();
-      const codeHash = generateCodeHash(data.code);
+      const codeHash = SummaryController.generateCodeHash(data.code);
       const cacheKey = `summary:${data.languageId}:${codeHash}`;
 
       const cachedSummary = await redis.get<string>(cacheKey);
@@ -83,5 +83,10 @@ export class SummaryController {
     if (!success) {
       throw new ApiError("Your daily limit has been exceeded", 429);
     }
+  }
+
+  private static generateCodeHash(code: string): string {
+    const normalized = code.trim().replace(/\s+/g, " ");
+    return createHash("sha256").update(normalized).digest("hex");
   }
 }

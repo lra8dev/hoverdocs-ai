@@ -1,5 +1,26 @@
 # HoverExplain Changelog
 
+## Version 1.4.0 — February 3, 2026
+
+### 🔧 Improved
+
+- Simplified monorepo by removing `@hoverexplain/utils` package
+- Moved code hash generation inline to `SummaryController`
+- Renamed `gemini-api` → `ai-model` for better abstraction
+- Improved type imports and code organization
+
+### 🐛 Bug Fixes:
+
+- Fixed README badge URLs
+- Added missing braces in conditional statements
+
+### 📦 Dependencies:
+
+- Removed `@hoverexplain/utils` package
+- Cleaned up workspace dependencies
+
+---
+
 ## Version 1.3.0 — February 1, 2026
 
 ### ⚡ Performance

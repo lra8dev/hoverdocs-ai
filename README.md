@@ -1,7 +1,7 @@
 # HoverExplain
 
-[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/luckyra8od.hoverexplain?style=flat-square&color=2563eb)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/luckyra8od.hoverexplain?style=flat-square)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain)
+[![Visual Studio Marketplace Version](https://img.shields.io/vscode-marketplace/v/luckyra8od.hoverexplain?style=flat-square&color=2563eb)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain)
+[![Installs](https://img.shields.io/vscode-marketplace/i/luckyra8od.hoverexplain)](https://marketplace.visualstudio.com/items?itemName=luckyra8od.hoverexplain)
 
 > Instant code understanding, right under your cursor.
 

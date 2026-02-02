@@ -15,3 +15,8 @@ export type AppError = {
 } & Error;
 
 export type AsyncMiddleware = (req: Request, res: Response, next: NextFunction) => Promise<void>;
+
+export type JwtPayload = {
+  userId: string;
+  sessionId: string;
+};

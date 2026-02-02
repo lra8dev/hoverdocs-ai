@@ -9,15 +9,17 @@ export function updateStatusBar(isEnabled: boolean, statusBarItem: StatusBarItem
     statusBarItem.text = "$(code) HoverExplain";
     statusBarItem.tooltip = "Click to Pause AI Summaries";
     statusBarItem.backgroundColor = undefined;
-    if (notify)
+    if (notify) {
       Toast.info("HoverExplain is now Active!");
+    }
   }
   else {
     statusBarItem.text = "$(circle-slash) HoverExplain";
     statusBarItem.tooltip = "Click to Activate AI Summaries";
     statusBarItem.backgroundColor = new ThemeColor("statusBarItem.warningBackground");
-    if (notify)
+    if (notify) {
       Toast.warn("HoverExplain is now Paused.");
+    }
   }
   statusBarItem.show();
 }

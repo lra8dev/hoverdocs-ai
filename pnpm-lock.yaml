@@ -115,9 +115,6 @@ importers:
       '@google/genai':
         specifier: catalog:ai
         version: 1.39.0
-      '@hoverexplain/utils':
-        specifier: workspace:*
-        version: link:../../packages/utils
       '@hoverexplain/validators':
         specifier: workspace:*
         version: link:../../packages/validators
@@ -226,18 +223,6 @@ importers:
       eslint-plugin-format:
         specifier: ^1.2.0
         version: 1.3.1(eslint@9.39.2)
-
-  packages/utils:
-    devDependencies:
-      '@hoverexplain/eslint-config':
-        specifier: workspace:*
-        version: link:../eslint-config
-      '@types/node':
-        specifier: catalog:types
-        version: 25.1.0
-      eslint:
-        specifier: catalog:tooling
-        version: 9.39.2
 
   packages/validators:
     dependencies:

@@ -1,11 +1,8 @@
 import jwt from "jsonwebtoken";
 
-import { config } from "@/config/env-variable";
+import type { JwtPayload } from "@/types";
 
-export type JwtPayload = {
-  userId: string;
-  sessionId: string;
-};
+import { config } from "@/config/env-variable";
 
 export class JwtService {
   private static readonly SECRET = config.JWT_SECRET;
